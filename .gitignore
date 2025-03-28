@@ -1,0 +1,49 @@
+# Node modules  
+node_modules/  
+
+# Logs  
+npm-debug.log*  
+yarn-debug.log*  
+yarn-error.log*  
+pnpm-debug.log*  
+
+# Dependency directories  
+/ios/Pods/  
+/android/.gradle/  
+/android/app/build/  
+/android/build/  
+
+# React Native specific  
+.expo/  
+.expo-shared/  
+dist/  
+web-build/  
+
+# Build outputs  
+build/  
+*.xcworkspace  
+*.xcodeproj/project.xcworkspace/  
+*.xcodeproj/xcuserdata/  
+*.xcodeproj/xcshareddata/  
+*.xcodeproj/xcuserdata/  
+*.xcconfig  
+*.ipa  
+*.app  
+
+# Metro bundler cache  
+metro-cache/  
+
+# Temporary files  
+*.tmp  
+*.swp  
+*.swo  
+*.sublime-*  
+*.DS_Store  
+
+# Env files  
+.env  
+.env.*  
+
+# IDE files  
+.idea/  
+.vscode/  
