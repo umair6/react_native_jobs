@@ -5,6 +5,7 @@ import { useCallback, useState } from "react";
 import { Company, JobAbout, JobFooter, JobTabs, ScreenHeaderBtn, Specifics } from "../../components";
 import { COLORS, SIZES, icons } from "../../constants";
 import useFetch from "../../hook/useFetch";
+import Footer from "../../components/jobdetails/footer/Footer";
 
 const tabs = ["About", "Qualifications", "Responsibilities"];
 
@@ -14,13 +15,8 @@ const JobDetails = () => {
     const router = useRouter();
     const [refreshing, setRefresing] = useState(false);
     const [activeTab, setActiveTab] = useState(tabs[0]);
-
-
-    console.log(`JobDetails::JobID: ${params.id}`);
     const { data, isLoading, error, refetch } = useFetch("job-details", {job_id: params.id});
     const onRefresh = () => {};
-
-
     const displayTabContent = () => {
 
         switch(activeTab)
@@ -93,6 +89,9 @@ const JobDetails = () => {
                         setActiveTab = {setActiveTab}
                         />
                         {displayTabContent()}
+
+
+                        <Footer url={data[0]?.job_google_link ?? 'https/::careers.google.com/jobs/results'}/>
                     </View>
 
                  )

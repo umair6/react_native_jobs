@@ -4,9 +4,11 @@ import styles from './nearbyjobs.style'
 import { COLORS } from '../../../constants';
 import NearbyJobCard from "../../common/cards/nearby/NearbyJobCard"
 import useFetch from '../../../hook/useFetch'
+import { useState } from 'react';
 
 const Nearbyjobs = () => {
   const router = useRouter();
+  const [selectedJob, SetSelectedJob] = useState();
 
   const {data, isLoading, error} = useFetch('search', 
     {query: 'developer jobs in Texas, USA',
@@ -33,8 +35,9 @@ const Nearbyjobs = () => {
               <NearbyJobCard 
               job = {job}
               key={`nearby-job-${job.job_id}`}
-              handleNavigate = {() => { 
-                router.push(`/job-details/${job.job_id}`)
+              handleNavigate = {(job) => { 
+                router.push(`/job-details/${job.job_id}`);
+                SetSelectedJob(job.job_id);
               }}
               />
             )
